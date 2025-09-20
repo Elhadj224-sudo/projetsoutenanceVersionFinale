@@ -451,3 +451,31 @@ input[type="text"]:focus, textarea:focus {
 #settings-btn:hover {
   background-color: #27ae60;
 }
+
+
+.don-item {
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.don-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.don-item h3 {
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+}
+
+.don-item p {
+  margin-bottom: 0.8rem;
+}
+
+.don-item small {
+  color: #7f8c8d;
+}

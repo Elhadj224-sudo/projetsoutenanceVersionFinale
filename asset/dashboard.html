@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard Admin - APUDEP</title>
   <link rel="stylesheet" href="/asset/css/dashboard.css" />
-  
 </head>
 <body>
   <header>
@@ -23,16 +22,11 @@
         <li><a href="#" id="experiences-tab" class="tab-link">Expériences</a></li>
         <li><a href="#" id="partners-tab" class="tab-link">Partenaires</a></li>
         <li><a href="#" id="dons-tab" class="tab-link">Messages de dons</a></li>
-
       </ul>
 
-      
-      
-
-
-      <div class="settings-button-container">
+      <!-- <div class="settings-button-container">
         <button id="settings-btn">⚙️ Paramètres</button>
-      </div>
+      </div> -->
     </nav>
 
     <!-- Contenu principal -->
@@ -89,12 +83,10 @@
       <!-- Section Expériences -->
       <div id="experiences-section" class="tab-content">
         <h2>Expériences</h2>
-
         <div class="button-wrapper" style="margin-bottom: 15px;">
           <button id="add-experience-btn" class="icon-button" title="Ajouter une expérience">➕</button>
         </div>
 
-        <!-- Formulaire expérience -->
         <form id="experience-form" enctype="multipart/form-data" style="margin-bottom: 20px; display: none;">
           <input type="hidden" id="experience-id" name="id" />
           <div>
@@ -113,34 +105,22 @@
           <button type="button" id="experience-form-cancel">Annuler</button>
         </form>
 
-        <div class="experiences-container">
-          <!-- Exemple d'expérience -->
-          <div class="experience-item">
-            <p>Titre de l'expérience</p>
-            <div class="action-buttons">
-              <button class="edit-experience">Modifier</button>
-              <button class="delete-experience">Supprimer</button>
-            </div>
-          </div>
-        </div>
+        <div class="experiences-container"></div>
       </div>
 
       <!-- Section Partenaires -->
       <div id="partners-section" class="tab-content">
         <h2>Partenaires</h2>
-
         <div class="button-wrapper" style="margin-bottom: 15px;">
           <button id="add-partner-btn" class="icon-button" title="Ajouter un partenaire">➕</button>
         </div>
 
-        <!-- Formulaire partenaire -->
         <form id="partner-form" enctype="multipart/form-data" style="margin-bottom: 20px; display: none;">
           <input type="hidden" id="partner-id" name="id" />
           <div>
             <label for="partner-name">Nom :</label><br />
             <input type="text" id="partner-name" name="name" required />
           </div>
-          
           <div>
             <label for="partner-logo">Logo (optionnel) :</label><br />
             <input type="file" id="partner-logo" name="image" accept="image/*" />
@@ -149,16 +129,13 @@
           <button type="button" id="partner-form-cancel">Annuler</button>
         </form>
 
-        <div class="partners-container">
-          <!-- Exemple de partenaire -->
-          <div class="partner-item">
-            <p>Nom du partenaire</p>
-            <div class="action-buttons">
-              <button class="edit-partner">Modifier</button>
-              <button class="delete-partner">Supprimer</button>
-            </div>
-          </div>
-        </div>
+        <div class="partners-container"></div>
+      </div>
+
+      <!-- ✅ Section Messages de dons -->
+      <div id="dons-section" class="tab-content">
+        <h2>Messages de dons</h2>
+        <div id="dons-list">Chargement...</div>
       </div>
     </section>
   </main>
@@ -188,35 +165,33 @@
       </form>
     </div>
   </div>
-
-  <!-- Modale Paramètres -->
-<div id="settings-modal" class="form-modal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); max-width: 400px;">
-  <h3 style="margin-bottom: 1rem;">Paramètres</h3>
-  <form>
-    <div>
-      <label for="language">Langue :</label>
-      <select id="language">
-        <option value="fr">Français</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-    <div style="margin-top: 1rem;">
-      <label>
-        <input type="checkbox" id="dark-mode-toggle" />
-        Activer le mode sombre
-      </label>
-    </div>
-    <div class="form-buttons" style="margin-top: 1.5rem; justify-content: flex-end;">
-      <button type="button" id="close-settings">Fermer</button>
-    </div>
-  </form>
-</div>
-
+<!-- 
+ 
+  <div id="settings-modal" class="form-modal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); max-width: 400px;">
+    <h3 style="margin-bottom: 1rem;">Paramètres</h3>
+    <form>
+      <div>
+        <label for="language">Langue :</label>
+        <select id="language">
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <div style="margin-top: 1rem;">
+        <label>
+          <input type="checkbox" id="dark-mode-toggle" />
+          Activer le mode sombre
+        </label>
+      </div>
+      <div class="form-buttons" style="margin-top: 1.5rem; justify-content: flex-end;">
+        <button type="button" id="close-settings">Fermer</button>
+      </div>
+    </form>
+  </div> -->
 
   <div id="overlay"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
   <script src="./js/dashboard.js"></script>
- 
 </body>
 </html>

@@ -1,4 +1,4 @@
- /* Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +34,7 @@ a:hover {
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #e0e0e0;
+  
 }
 
 /* Logo */
@@ -53,8 +54,8 @@ a:hover {
     height: 60px;
     width: 60px;
 }
-.logo-text h1 {
-  font-size: 1.7em;
+.logo-text h3 {
+  font-size: 1.em;
   color: #1a5f7a;
   letter-spacing: -0.5px;
 }
@@ -679,7 +680,7 @@ a:hover {
 
 .experience-item {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* <-- MODIFIÉ : étire les enfants à la hauteur du plus grand */
   gap: 40px;
   background: #f9fbfd;
   border-radius: 16px;
@@ -696,16 +697,20 @@ a:hover {
 
 .experience-img {
   width: 280px;
-  height: 200px;
+  height: 100%; /* <-- MODIFIÉ : prend toute la hauteur du parent */
   object-fit: cover;
   border-radius: 16px 0 0 16px;
   border-right: 4px solid #2d8c7a;
+  flex-shrink: 0;
 }
 
 .experience-content {
   padding: 25px 30px;
   flex: 1;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* <-- optionnel : centre verticalement le texte */
 }
 .experience-content h3 {
   color: #1a5f7a;
@@ -805,7 +810,7 @@ a:hover {
 
 .news-item {
   display: flex;
-  align-items: center;
+  align-items: stretch; /* <-- MODIFIÉ : étire les enfants à la hauteur du plus grand */
   gap: 40px;
   background: #f9fbfd; /* même couleur que experiences */
   border-radius: 16px;
@@ -821,7 +826,7 @@ a:hover {
 
 .news-img {
   width: 280px;
-  height: 200px;
+  height: 100%; /* <-- MODIFIÉ : prend toute la hauteur du parent */
   object-fit: cover;
   border-radius: 16px 0 0 16px;
   border-right: 4px solid #2d8c7a;
@@ -832,6 +837,9 @@ a:hover {
   padding: 25px 30px;
   flex: 1;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* <-- optionnel : centre verticalement le texte */
 }
 
 .news-content h4 {
@@ -1029,6 +1037,7 @@ html {
   /* SECTION PADDING */
   .section {
     padding: 40px 5%;
+   
   }
 
   /* BOUTONS */
@@ -1091,4 +1100,25 @@ html {
 
 .dropdown-menu.active {
   display: flex;
+}
+
+.btn-see-more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #1a5f7a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.btn-see-more:hover {
+  background-color: #154b5a;
+}
+
+#accueil {
+  margin-bottom: 20px;
 }

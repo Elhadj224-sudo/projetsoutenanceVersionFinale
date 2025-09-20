@@ -3,14 +3,13 @@ document.getElementById('hamburger')?.addEventListener('click', () => {
   document.querySelector('.main-nav')?.classList.toggle('active');
 });
 
-
 // -------------------- DROPDOWN MOBILE --------------------
 document.querySelectorAll('.dropdown > a').forEach(link => {
   link.addEventListener('click', function(e) {
-    if (window.innerWidth <= 768) { // uniquement mobile
-      e.preventDefault(); // empêcher le lien normal
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
       const dropdownMenu = this.nextElementSibling;
-      dropdownMenu.classList.toggle('active'); // toggle la classe active
+      dropdownMenu.classList.toggle('active');
     }
   });
 });
@@ -111,6 +110,9 @@ function createNewsItem(actualite) {
   contentDiv.append(titre, paragraphe);
   newsItem.append(img, contentDiv);
 
+  // Appliquer le tronquage directement ici
+  truncateText(paragraphe, 5);
+
   newsItem.addEventListener('click', () => afficherDetailsActualite(actualite));
 
   container.prepend(newsItem);
@@ -180,3 +182,26 @@ document.getElementById('close-experience-details')?.addEventListener('click', (
   section.style.display = 'none';
   section.classList.remove('active');
 });
+
+// -------------------- TRUNCATE TEXT --------------------
+function truncateText(element, lines = 5) {
+  const originalText = element.textContent;
+  const textLines = originalText.split(/\. |\n/);
+  if (textLines.length > lines) {
+    const preview = textLines.slice(0, lines).join('. ') + '...';
+    element.textContent = preview;
+
+    if (!element.nextElementSibling || !element.nextElementSibling.classList.contains('btn-see-more')) {
+      const btn = document.createElement('button');
+      btn.textContent = "Voir plus";
+      btn.classList.add('btn-see-more');
+      element.parentNode.appendChild(btn);
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        element.textContent = originalText;
+        btn.style.display = 'none';
+      });
+    }
+  }
+}
