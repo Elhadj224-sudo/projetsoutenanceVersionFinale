@@ -141,53 +141,33 @@
   </main>
 
   <!-- Formulaire actualités -->
-  <div id="news-form-container" style="display:none;">
-    <div class="form-modal">
-      <h3 id="form-title">Ajouter une actualité</h3>
-      <form id="news-form" enctype="multipart/form-data">
-        <input type="hidden" id="news-id" name="id" />
-        <div>
-          <label for="title">Titre :</label><br />
-          <input type="text" id="title" name="title" required />
-        </div>
-        <div>
-          <label for="content">Contenu :</label><br />
-          <textarea id="content" name="content" rows="4" required></textarea>
-        </div>
-        <div>
-          <label for="newsImage">Image (optionnelle) :</label><br />
-          <input type="file" id="newsImage" name="image" accept="image/*" />
-        </div>
-        <div class="form-buttons">
-          <button type="submit">Enregistrer</button>
-          <button type="button" id="news-form-cancel">Annuler</button>
-        </div>
-      </form>
-    </div>
-  </div>
-<!-- 
- 
-  <div id="settings-modal" class="form-modal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); max-width: 400px;">
-    <h3 style="margin-bottom: 1rem;">Paramètres</h3>
-    <form>
+  <!-- MODIFIEZ VOTRE FORMULAIRE DANS news-form-container -->
+<div id="news-form-container" style="display:none;">
+  <div class="form-modal">
+    <h3 id="form-title">Ajouter une actualité</h3>
+    <form id="news-form" enctype="multipart/form-data">
+      <input type="hidden" id="news-id" name="id" />
       <div>
-        <label for="language">Langue :</label>
-        <select id="language">
-          <option value="fr">Français</option>
-          <option value="en">English</option>
-        </select>
+        <label for="title">Titre :</label><br />
+        <input type="text" id="title" name="title" required />
       </div>
-      <div style="margin-top: 1rem;">
-        <label>
-          <input type="checkbox" id="dark-mode-toggle" />
-          Activer le mode sombre
-        </label>
+      <div>
+        <label for="news-content">Contenu :</label><br />
+        <!-- CHANGER id="content" en id="news-content" -->
+        <textarea id="news-content" name="content" rows="4" required></textarea>
       </div>
-      <div class="form-buttons" style="margin-top: 1.5rem; justify-content: flex-end;">
-        <button type="button" id="close-settings">Fermer</button>
+      <div>
+        <label for="newsImage">Image (optionnelle) :</label><br />
+        <input type="file" id="newsImage" name="image" accept="image/*" />
+      </div>
+      <div class="form-buttons">
+        <button type="submit">Enregistrer</button>
+        <button type="button" id="news-form-cancel">Annuler</button>
       </div>
     </form>
-  </div> -->
+  </div>
+</div>
+
 
   <div id="overlay"></div>
 
